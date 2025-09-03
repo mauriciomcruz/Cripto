@@ -51,11 +51,11 @@ def criptografar(caractere, chave_publica):
     e, n = chave_publica
     m = ord(caractere)
     c = pow(m, e, n)
-    return c
+    return chr(c)
 
 def descriptografar(c, chave_privada):
     d, n = chave_privada
-    m = pow(c, d, n)
+    m = pow(ord(c), d, n)
     return chr(m)
 
 def verificar_numero(n, texto):
